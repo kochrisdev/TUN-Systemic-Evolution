@@ -2,6 +2,8 @@
 
 Status: named local technical run. Assessor: Codex automated checks and source review; no independent human or external assessment. [Scope](SCOPE.md) · [Conformance mapping](CONFORMANCE-MATRIX.md)
 
+This is the historical validation of the initial standalone pilot. The subsequent connected increment and revised documentation are assessed separately in the [family validation record](FAMILY-VALIDATION-2026-10-02.md). Original counts and fingerprints below describe that initial run, not the current whole repository.
+
 ## Environment and observed results
 
 - Host: Microsoft Windows NT 10.0.26200.0.

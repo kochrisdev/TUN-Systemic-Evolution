@@ -11,3 +11,7 @@ Before adoption, name a supported recovery target and its prerequisites. Restori
 Preserve the original activation and all effects. Restoring a prompt does not recall sent messages, delete copies, undo learning by people, or reverse transactions. Where full restoration is unavailable, describe correction, compensation, containment, or escalation accurately.
 
 The offline pilot stores immutable records through its application API and a separate active-configuration pointer with a generation counter. Activation and rollback use transactional state checks, preserve the journal, and read back the local pointer. This establishes local pointer behavior only; it is not remote recovery, cryptographic integrity, or protection against a database administrator.
+
+The connected family pilot adds links across Management decisions, Engineering publication operations, provider resources, and local Evolution activation. It recovers the original operation or activation in specifically tested acknowledgement gaps. Those are recovery of knowledge about an effect, not reversal of the effect.
+
+Coordinated manifest withdrawal and configuration rollback are not implemented. A publication may survive a blocked activation, and human learning may survive a reverted configuration. Keep these residual states visible and obtain the relevant recovery decision instead of describing the whole case as “undone.”

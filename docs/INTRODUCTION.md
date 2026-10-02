@@ -12,4 +12,6 @@ Management chooses what matters, funds the experiment, and owns the adoption dec
 
 Start manually with the [experiment charter](../templates/experiment-charter.md). Select one useful question, one bounded change, one accountable owner, and a small set of measures. Use the [worked example](../examples/human-ai-support-evolution.md) to see why a faster candidate may be rejected and a modest improvement may deserve further testing.
 
-The [offline pilot](PILOT.md) then demonstrates part of the record handling. Its measurements are synthetic. Real benefits require observations from real work.
+For a practical sequence, follow the [first learning cycle](FIRST-LEARNING-CYCLE.md). Start with one question that could change a decision, not a large knowledge platform. Keep the lesson even if the best decision is to retain the baseline.
+
+The [standalone pilot](PILOT.md) demonstrates local evaluation, adoption, and recovery. The [family pilot](FAMILY-PILOT.md) connects actual companion implementations around a published adoption record. Both use synthetic measurements. Real benefits require observations from real work and an assessment suited to the claim.

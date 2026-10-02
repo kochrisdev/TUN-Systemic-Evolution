@@ -18,8 +18,9 @@ Status: blank template.
 - Observed change: [bounded statement]
 - Interpretation: [what might explain it]
 - Causal or transfer claim, if justified: [method and exact limits; otherwise none]
+- Participant interpretation and disputed assessments: [accounts, differences, unresolved questions]
 - LearningRecord update: [assumption assessed, applicability, confidence basis, decision impact]
-- Recommendation: [adopt within scope / further test / revise / reject / defer]
+- Recommendation: [adopt within scope / further test / revise / retain baseline / reject / defer]
 - Alternatives and dissent: [details]
 - Follow-up owners, response dates/triggers, and review cost: [details]
 

@@ -23,6 +23,10 @@ If evidence, criteria, candidate, baseline, or scope changes materially, return 
 
 ## Narrow pilot interpretation
 
-The local evaluator compares synthetic percentages against declared thresholds and a minimum observation count. It can report `supported`, `contradicted`, or `insufficient` for those checks only. It reports all missing, conflicting, stale, and failed findings; any observed failure takes precedence over insufficiency in its summary. Passing does not demonstrate significance, causality, human learning, or generalization.
+The local evaluator compares synthetic aggregates, including percentages and review time, against declared thresholds and a minimum observation count. It can report `supported`, `contradicted`, or `insufficient` for those checks only. It reports all missing, conflicting, stale, and failed findings; any observed failure takes precedence over insufficiency in its summary. Passing does not demonstrate significance, causality, human learning, or generalization.
 
-The pilot requires a fixture owner's decision and a separate activation call. The resulting local pointer change is persisted and read back. A real provider needs its own authorization, dispatch, idempotency, reconciliation, and verification contracts.
+The standalone pilot requires a fixture owner's decision and a separate activation call. The resulting local pointer change is persisted and read back.
+
+The family pilot adds a Management decision and Engineering publication of a bound adoption manifest. Before the first local activation, it requires a verified publication, matching current resource, current Management authority, and unchanged supporting Evolution evidence/state. This remains a local fixture process. Publication, local activation, and benefit are separate claims; production deployment needs its own complete authorization and verification boundary.
+
+A later blocking finding does not erase a publication that already occurred. Preserve that effect, decide whether it should be withdrawn under appropriate authority, and do not claim the intended configuration was activated if it was not.

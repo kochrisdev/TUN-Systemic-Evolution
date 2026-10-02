@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "tun-vendor/0.1",
+  "revisions": {
+    "management": "6959643f4ab0134e20d39ae3112a38d501853d05",
+    "engineering": "476f649d41c4a0f659c15276384866908d9b9c01",
+    "design": "f1cc566c44a04741e51ce642ffaa0feab0bd5b36"
+  },
+  "files": [
+    {
+      "component": "design",
+      "path": "LICENSE",
+      "blob": "0e259d42c996742e9e3cba14c677129b2c1b6311"
+    },
+    {
+      "component": "design",
+      "path": "packages/react/src/ActionReceipt.tsx",
+      "blob": "5cc4029db3d4e1c674b8e450da49587b0b1759ac"
+    },
+    {
+      "component": "design",
+      "path": "packages/react/src/ApprovalGate.tsx",
+      "blob": "764928a0a75ba512a03664717742cdff664a22c4"
+    },
+    {
+      "component": "design",
+      "path": "packages/react/src/contracts.ts",
+      "blob": "bbce76e47f522c2c6ae4ca2cf542f2af39673767"
+    },
+    {
+      "component": "design",
+      "path": "packages/react/src/review-contracts.ts",
+      "blob": "842765c13b9334f3334ccfddcdf54785227fde06"
+    },
+    {
+      "component": "design",
+      "path": "packages/react/src/styles.css",
+      "blob": "9d7e8ad39c2d4196f7a7d663beb08eccbaa9be8a"
+    },
+    {
+      "component": "design",
+      "path": "styles/tun.css",
+      "blob": "92929591c9eba5e3e1c50f71a899fcde0dec6938"
+    },
+    {
+      "component": "engineering",
+      "path": "LICENSE",
+      "blob": "f7fa057174b3dee5c6c9c2a49fea2996319c04b5"
+    },
+    {
+      "component": "engineering",
+      "path": "reference/tse_pilot/__init__.py",
+      "blob": "7aade9c5fc067e275898a45ec99c48bb540bb0f7"
+    },
+    {
+      "component": "engineering",
+      "path": "reference/tse_pilot/contracts.py",
+      "blob": "aec812977de3b866fe16a7532ae8e150e43d2bec"
+    },
+    {
+      "component": "engineering",
+      "path": "reference/tse_pilot/presentation.py",
+      "blob": "2a11cd56bcb488aa7a951f995fcf01f91f6ef2ac"
+    },
+    {
+      "component": "engineering",
+      "path": "reference/tse_pilot/runtime.py",
+      "blob": "66d35a1e006271e6a6616a070da2dca71d75313b"
+    },
+    {
+      "component": "engineering",
+      "path": "schemas/pilot-v0.1.schema.json",
+      "blob": "f863e61a83f30cf3ddef4e9cdfe80b23189f4826"
+    },
+    {
+      "component": "engineering",
+      "path": "schemas/pilot-v0.2.schema.json",
+      "blob": "36a1492e315f2bd3b1b42cfd9f93c2a9d6627a27"
+    },
+    {
+      "component": "engineering",
+      "path": "schemas/pilot-v0.3.schema.json",
+      "blob": "ef18d4ceca09cc2c28ced58ac557e6807bfd6cb9"
+    },
+    {
+      "component": "management",
+      "path": "LICENSE",
+      "blob": "f7fa057174b3dee5c6c9c2a49fea2996319c04b5"
+    },
+    {
+      "component": "management",
+      "path": "reference/tsm_pilot/__init__.py",
+      "blob": "8d9297ec7f14f9be1586d506707363c33d1499bb"
+    },
+    {
+      "component": "management",
+      "path": "reference/tsm_pilot/contracts.py",
+      "blob": "36acc5cd2b9af096189125197aace901aee72e4d"
+    },
+    {
+      "component": "management",
+      "path": "reference/tsm_pilot/runtime.py",
+      "blob": "3ed5f4d8a9bce8f4085240833d506f839d08a67a"
+    },
+    {
+      "component": "management",
+      "path": "schemas/pilot-v0.1.schema.json",
+      "blob": "721a87443e611acd99a519231ca47aa3a369995a"
+    }
+  ]
+}

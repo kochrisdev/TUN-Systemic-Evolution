@@ -12,9 +12,23 @@ Status: partial technical evidence only. **No complete requirement or full confo
 | TSEV-006 Bounded execution | `test_agent_cannot_approve_activate_or_restore`; `test_permission_revocation_and_renewal_invalidate_prior_decision` | Real identity, runtime budgets, external effects, containment and escalation |
 | TSEV-007 Evaluation validity | `test_population_method_unit_and_window_mismatch_are_not_accepted`; `test_known_failure_is_not_hidden_by_missing_other_evidence`; `test_missing_value_and_small_sample_are_insufficient` | Real evidence, evaluator validity, contamination, uncertainty, causality, subgroup effects |
 | TSEV-008 Adoption | `test_new_evidence_requires_a_new_evaluation`; `test_later_rejection_supersedes_earlier_adoption`; `test_changed_experiment_cannot_reuse_evaluation` | Authenticated Management decision, dissent, alternatives, complete scope and review triggers |
-| TSEV-009 Activation | `test_supported_decision_does_not_activate_until_separate_command`; `test_concurrent_activation_commits_only_one_local_change`; `test_repeated_activation_is_blocked` | Engineering integration, dependencies, remote dispatch/readback, unknown effects |
+| TSEV-009 Activation | `test_supported_decision_does_not_activate_until_separate_command`; `test_concurrent_activation_commits_only_one_local_change`; `test_repeated_activation_is_blocked` | Production activation integration, dependencies, real remote dispatch/readback, and unknown effects |
 | TSEV-010 Monitoring | `test_missing_monitoring_is_visible_and_does_not_auto_restore` and demo's synthetic breach | Actual collection, cadence, owner response, drift assessment and notifications |
 | TSEV-011 Recovery/retirement | `test_rollback_cannot_overwrite_intervening_activation_even_same_artifact`; `test_rollback_requires_current_permission_and_fresh_review`; `test_restart_preserves_activation_monitoring_and_recovery_history` | Remote restoration, dependent changes, irreversible effects, retirement and residual obligations |
 | TSEV-012 Assessment/method | Named report, source fingerprints, documentation checks | Human reviewer, complete applicable results, method usefulness and review burden |
+
+## Additional family evidence
+
+The [family suite](../tests/family/test_family.py) and [renderer suite](../review/render.test.mjs) add selected evidence; they do not complete the requirements above. See the [new validation record](FAMILY-VALIDATION-2026-10-02.md).
+
+| Related requirements | Selected additional evidence | Limit that remains |
+|---|---|---|
+| TSEV-002, 003, 007 | `test_management_import_preserves_gain_thresholds_and_typed_references`; `test_evidence_changed_between_prepare_and_approval_blocks_adoption` | Synthetic aggregates; no real method or human assessment |
+| TSEV-006, 008 | `test_agent_cannot_make_the_management_adoption_decision`; `test_paused_mandate_blocks_dispatch_after_reservation`; `test_engineering_revocation_blocks_dispatch_despite_management_approval` | Fixture identities; direct cross-store races; publication permission is not general deployment authority |
+| TSEV-008, 009 | `test_manifest_binds_management_decision_candidate_and_evaluation`; `test_stale_publication_approval_is_rejected` | Explicit narrow adapter, not universal organizational semantics |
+| TSEV-009 | `test_lost_response_and_unavailable_readback_preserve_baseline`; `test_restart_reconciles_original_operation_without_duplicate_effect_or_reservation`; `test_activation_acknowledgement_gap_recovers_existing_record` | Local simulated provider and selected interruption points only |
+| TSEV-009, 010 | `test_historical_publication_receipt_does_not_prove_current_manifest`; `test_new_adverse_evidence_after_publication_blocks_activation_but_retains_effect` | No ongoing monitoring service or integrated withdrawal |
+| TSEV-009, 012 | Renderer tests preserve unresolved/completed receipt states, disabled controls, escaped text, and separate activation | No user comprehension or accessibility assessment |
+| TSEV-011 | `test_provider_commit_crash_can_be_reconciled_after_restart` recovers knowledge of an effect | Reconciliation is not reversal; coordinated family rollback and retirement remain absent |
 
 For an adopter assessment, record the implementation revision, environment, exact scope, accountable reviewer, date, result for every applicable obligation, supporting evidence, open issues, justified exclusions, and recommendation departures. A selected passing test cannot discharge every clause of a requirement. Do not mark manual or integration work passed because the local example runs.

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext", "jsx": "react-jsx",
+    "strict": true, "skipLibCheck": true, "rootDir": "..", "outDir": "../.review-build",
+    "lib": ["ES2022", "DOM"], "types": ["react", "react-dom"]
+  },
+  "include": ["src/**/*.tsx", "../vendor/design/packages/react/src/*.tsx", "../vendor/design/packages/react/src/*.ts"]
+}

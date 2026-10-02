@@ -31,3 +31,9 @@ No universal minimum sample size is supplied by this framework. The pilot's coun
 Specify permitted actions, data, tools, targets, resource ceilings, expiration, affected people, consent/notice, exclusions, stop conditions, responders, and supported recovery. Test containment before granting external effects. An offline result does not authorize production exposure.
 
 Keep the learning record concise. A useful failed hypothesis, an unresolved question, and a supported improvement are all valid outputs when their evidence and decision implications are clear.
+
+## Include a human practice plan when learning is intended
+
+Name what participants will practice, what feedback they receive, how cases differ from final assessment, and what assistance is available. Separate learning from exposure: using an AI feature repeatedly is not itself evidence that a person developed a skill. If both human practice and AI configuration change, account for that combined intervention in the comparison and claim.
+
+For a first team cycle, use the [practical guide](FIRST-LEARNING-CYCLE.md). The synthetic pilot's thresholds and case counts are teaching fixtures; they are not recommended targets for a real study.

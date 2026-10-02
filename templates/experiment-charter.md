@@ -31,12 +31,14 @@ Status: blank template. Complete before using results for an adoption decision.
 ## People, data, and execution
 
 - Participant involvement, applicable consent/notice, withdrawal, and escalation: [process]
+- Human practice and feedback intervention: [tasks, feedback source, practice/assessment separation, participant input]
 - Independent/assisted performance and transfer/retention plan: [method or justified exclusion]
 - Data collection, evaluation reuse, memory, training, and sharing permissions: [separate purposes]
 - Access, retention, deletion, and evidence-availability rules: [references]
 - Allowed actions, tools, targets, data scope, duration, resource ceilings: [current authority]
 - Stop conditions, responder, response expectation, and in-flight limits: [controls]
 - Recovery, compatibility prerequisites, irreversible effects: [plan]
+- Expected current target state and version: [activation precondition; not just artifact name]
 - Monitoring after adoption and next review: [metrics, cadence/triggers, owner, freshness response]
 
 ## Authorization

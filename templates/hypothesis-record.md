@@ -13,9 +13,11 @@ Status: blank template. Replace brackets with actual information; mark unknowns 
 - What would disconfirm it: [observable conditions]
 - Decision this evidence will inform: [adopt, revise, retire, or investigate what]
 - Existing supporting and contrary evidence: [references and limitations]
+- Proposed human practice or feedback intervention: [what people will do differently, or why none is needed]
 - Human development question: [skill, judgment, workload, agency, or justified non-applicability]
 - Applicability and transfer limits: [where this lesson may and may not be reused]
 - Next experiment or inquiry: [reference, owner, and trigger]
+- Source access and reuse restrictions: [who may inspect the evidence; permitted uses]
 - Review or expiry condition: [date or material change]
 
 An observation or proposed hypothesis is not an established learning claim.

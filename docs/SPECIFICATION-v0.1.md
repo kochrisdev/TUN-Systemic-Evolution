@@ -50,7 +50,13 @@ Before effectful adoption, the owner MUST define supported recovery, dependencie
 
 ## TSEV-012 — Proportionate assessment and method review
 
-A scoped conformance claim MUST identify the specification and implementation revisions, environment, applicable requirements, named evidence, reviewer, date, unresolved limitations, and justified exclusions. An unmet applicable MUST or MUST NOT MUST prevent a full claim for that scope. Synthetic fixtures, planned checks, and passed technical tests MUST NOT be presented as evidence of human learning or organizational benefit. The team SHOULD periodically assess review burden, repeated errors, useful decision changes, and whether its learning process needs revision.
+A scoped conformance claim MUST identify the specification and implementation revisions, environment, applicable requirements, named evidence, reviewer, date, unresolved limitations, and justified exclusions. Any unmet applicable obligation MUST prevent a full conformance claim for that scope. Synthetic fixtures, planned checks, and passed technical tests MUST NOT be presented as evidence of human learning or organizational benefit. The team SHOULD periodically assess review burden, repeated errors, useful decision changes, and whether its learning process needs revision.
+
+## Applying the requirements
+
+A material activity is one whose proposed change or claim could affect outcomes, people's work, authority, data use, resources, or an existing adoption decision. Record why a lightweight or more rigorous assessment is proportionate. Writing an exclusion does not waive an applicable obligation.
+
+These obligations describe the intended discipline, not a statement that the pilots already satisfy it. The standalone pilot and connected family slice provide selected technical evidence only. A publication receipt cannot satisfy an activation or benefit obligation whose object is different.
 
 ## Proportionate records
 

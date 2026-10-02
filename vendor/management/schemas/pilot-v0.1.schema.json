@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TUN Systemic Management experimental local pilot v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recordType", "id", "version", "scope", "actor", "recordedAt", "visibility", "data"],
+  "properties": {
+    "schemaVersion": {"const": "0.1"},
+    "recordType": {"enum": ["Initiative", "Mandate", "Decision", "Observation", "Review", "Reservation"]},
+    "id": {"$ref": "#/$defs/id"},
+    "version": {"type": "integer", "minimum": 1},
+    "scope": {"$ref": "#/$defs/id"},
+    "actor": {"$ref": "#/$defs/id"},
+    "recordedAt": {"$ref": "#/$defs/time"},
+    "visibility": {"enum": ["team", "reviewers"]},
+    "data": {"type": "object"}
+  },
+  "allOf": [
+    {"if": {"properties": {"recordType": {"const": "Initiative"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/initiative"}}}},
+    {"if": {"properties": {"recordType": {"const": "Mandate"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/mandate"}}}},
+    {"if": {"properties": {"recordType": {"const": "Decision"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/decision"}}}},
+    {"if": {"properties": {"recordType": {"const": "Observation"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/observation"}}}},
+    {"if": {"properties": {"recordType": {"const": "Review"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/review"}}}},
+    {"if": {"properties": {"recordType": {"const": "Reservation"}}}, "then": {"properties": {"data": {"$ref": "#/$defs/reservation"}}}}
+  ],
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "text": {"type": "string", "pattern": "\\S", "maxLength": 4096},
+    "texts": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true},
+    "time": {"type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"},
+    "ref": {
+      "type": "object", "additionalProperties": false, "required": ["id", "version"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "version": {"type": "integer", "minimum": 1}}
+    },
+    "refs": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "assessment": {"enum": ["supported", "insufficient", "contradicted"]},
+    "criterion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "claim", "unit", "operator", "threshold", "maxAgeSeconds", "method", "population"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "claim": {"$ref": "#/$defs/text"},
+        "unit": {"$ref": "#/$defs/text"}, "operator": {"enum": ["gte", "lte"]},
+        "threshold": {"type": "number"}, "maxAgeSeconds": {"type": "integer", "minimum": 1},
+        "method": {"$ref": "#/$defs/text"}, "population": {"$ref": "#/$defs/text"}
+      }
+    },
+    "initiative": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "outcome", "owner", "beneficiaries", "baseline", "assumptions", "alternatives", "criteria", "budgetMinor", "currency", "reviewAt", "stopConditions", "dependencies"],
+      "properties": {
+        "title": {"$ref": "#/$defs/text"}, "outcome": {"$ref": "#/$defs/text"},
+        "owner": {"$ref": "#/$defs/id"}, "beneficiaries": {"$ref": "#/$defs/text"},
+        "baseline": {"$ref": "#/$defs/text"}, "assumptions": {"$ref": "#/$defs/texts"},
+        "alternatives": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+        "criteria": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/criterion"}},
+        "budgetMinor": {"type": "integer", "minimum": 1, "maximum": 1000000000}, "currency": {"const": "USD"},
+        "reviewAt": {"$ref": "#/$defs/time"}, "stopConditions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+        "dependencies": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "mandate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["initiativeRef", "purpose", "delegate", "actions", "targets", "dataScope", "budgetMinor", "startsAt", "expiresAt", "escalation", "furtherDelegation"],
+      "properties": {
+        "initiativeRef": {"$ref": "#/$defs/ref"}, "purpose": {"$ref": "#/$defs/text"},
+        "delegate": {"$ref": "#/$defs/id"},
+        "actions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "targets": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "dataScope": {"$ref": "#/$defs/text"}, "budgetMinor": {"type": "integer", "minimum": 1, "maximum": 1000000000},
+        "startsAt": {"$ref": "#/$defs/time"}, "expiresAt": {"$ref": "#/$defs/time"},
+        "escalation": {"$ref": "#/$defs/text"}, "furtherDelegation": {"const": false}
+      }
+    },
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["initiativeRef", "subjectRef", "choice", "rationale", "alternatives", "evidenceRefs", "reviewAt"],
+      "properties": {
+        "initiativeRef": {"$ref": "#/$defs/ref"}, "subjectRef": {"$ref": "#/$defs/ref"},
+        "choice": {"enum": ["approve", "reject", "pause", "revoke"]}, "rationale": {"$ref": "#/$defs/text"},
+        "alternatives": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+        "evidenceRefs": {"$ref": "#/$defs/refs"}, "reviewAt": {"$ref": "#/$defs/time"}
+      }
+    },
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["initiativeRef", "kind", "criterionId", "status", "value", "unit", "source", "method", "population", "windowStart", "windowEnd", "observedAt", "limitations", "supersedes"],
+      "properties": {
+        "initiativeRef": {"$ref": "#/$defs/ref"}, "kind": {"enum": ["outcome", "operation"]},
+        "criterionId": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "status": {"enum": ["measured", "verified", "missing", "unknown", "contradicted"]},
+        "value": {"type": ["number", "null"]}, "unit": {"type": ["string", "null"]},
+        "source": {"$ref": "#/$defs/text"}, "method": {"$ref": "#/$defs/text"},
+        "population": {"$ref": "#/$defs/text"}, "windowStart": {"$ref": "#/$defs/time"}, "windowEnd": {"$ref": "#/$defs/time"},
+        "observedAt": {"$ref": "#/$defs/time"}, "limitations": {"$ref": "#/$defs/texts"},
+        "supersedes": {"anyOf": [{"$ref": "#/$defs/ref"}, {"type": "null"}]}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "operation"}}}, "then": {"properties": {
+          "criterionId": {"type": "null"}, "value": {"type": "null"}, "unit": {"type": "null"},
+          "status": {"enum": ["verified", "unknown", "contradicted"]}
+        }}, "else": {"properties": {
+          "criterionId": {"$ref": "#/$defs/id"}, "unit": {"$ref": "#/$defs/text"},
+          "status": {"enum": ["measured", "missing", "unknown", "contradicted"]}
+        }}},
+        {"if": {"properties": {"status": {"const": "measured"}}}, "then": {"properties": {"value": {"type": "number"}}}, "else": {"properties": {"value": {"type": "null"}}}}
+      ]
+    },
+    "finding": {
+      "type": "object", "additionalProperties": false, "required": ["criterionId", "assessment", "explanation", "evidenceRefs"],
+      "properties": {
+        "criterionId": {"$ref": "#/$defs/id"}, "assessment": {"$ref": "#/$defs/assessment"},
+        "explanation": {"$ref": "#/$defs/text"}, "evidenceRefs": {"$ref": "#/$defs/refs"}
+      }
+    },
+    "review": {
+      "type": "object", "additionalProperties": false,
+      "required": ["initiativeRef", "windowStart", "windowEnd", "assessment", "findings", "evidenceRefs", "limitations", "proposedAction", "rationale", "reviewAt", "budget"],
+      "properties": {
+        "initiativeRef": {"$ref": "#/$defs/ref"}, "windowStart": {"$ref": "#/$defs/time"}, "windowEnd": {"$ref": "#/$defs/time"},
+        "assessment": {"$ref": "#/$defs/assessment"}, "findings": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/finding"}},
+        "evidenceRefs": {"$ref": "#/$defs/refs"}, "limitations": {"$ref": "#/$defs/texts"},
+        "proposedAction": {"enum": ["continue", "change", "expand", "pause", "retire"]},
+        "rationale": {"$ref": "#/$defs/text"}, "reviewAt": {"$ref": "#/$defs/time"},
+        "budget": {"type": "object", "additionalProperties": false, "required": ["ceilingMinor", "reservedMinor", "availableMinor", "currency"], "properties": {
+          "ceilingMinor": {"type": "integer"}, "reservedMinor": {"type": "integer"}, "availableMinor": {"type": "integer"}, "currency": {"const": "USD"}
+        }}
+      }
+    },
+    "reservation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["initiativeRef", "mandateRef", "requestId", "action", "target", "amountMinor"],
+      "properties": {
+        "initiativeRef": {"$ref": "#/$defs/ref"}, "mandateRef": {"$ref": "#/$defs/ref"},
+        "requestId": {"$ref": "#/$defs/id"}, "action": {"$ref": "#/$defs/text"}, "target": {"$ref": "#/$defs/text"},
+        "amountMinor": {"type": "integer", "minimum": 1, "maximum": 1000000000}
+      }
+    }
+  }
+}

@@ -39,3 +39,11 @@ A completed experiment can contradict its hypothesis. An adopted change may neve
 Bind the hypothesis and evaluation to exact versions. Preserve all considered evidence, including excluded records and their exclusion reasons. Link a correction to its predecessor. Check the latest relevant evidence and current baseline before activation. A later observation can make an earlier evaluation unsuitable for a new decision while leaving that evaluation intact as history.
 
 Reusing a lesson requires review of its applicability: population, language, domain, model, tools, environment, and policy. References to restricted evidence do not authorize disclosure of it. Record whether missing source material limits reproduction or only further interpretation.
+
+## Pilot mappings are explicit, not universal
+
+The standalone host uses its own local record IDs and immutable records. The family bridge preserves Management's integer-version references and Engineering's string-version references. It publishes a `tun-family-manifest/0.1` object linking the candidate digest, evaluation/evidence binding, mandate, and organizational decision. This manifest is an implementation-specific record, not the complete general model above.
+
+The derived Evolution decision references Management's decision. Publication status and local activation status remain separate. A later observation, revoked permission, withdrawn publication, or newer active generation may limit what can happen next without rewriting earlier records.
+
+See [family semantics and failure limits](FAMILY-PILOT.md). Neither a matching record name nor a rendered status demonstrates general interoperability.

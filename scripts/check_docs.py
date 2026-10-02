@@ -4,6 +4,7 @@ No external URLs or anchors are checked. Passing does not validate product claim
 """
 
 from pathlib import Path
+import os
 import re
 import sys
 from urllib.parse import unquote, urlsplit
@@ -12,7 +13,11 @@ from urllib.parse import unquote, urlsplit
 def main():
     root = Path(__file__).resolve().parents[1]
     errors = []
-    files = sorted(root.rglob("*.md"))
+    files = []
+    for directory, children, names in os.walk(root):
+        children[:] = [name for name in children if name not in {".git", ".venv", "node_modules", ".review-build", ".pilot-data", "__pycache__"}]
+        files.extend(Path(directory) / name for name in names if name.endswith(".md"))
+    files.sort()
     for path in files:
         text = path.read_text(encoding="utf-8")
         if len(re.findall(r"^```", text, re.MULTILINE)) % 2:

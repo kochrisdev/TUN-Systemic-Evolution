@@ -1,0 +1,14 @@
+{
+  "name": "tun-systemic-evolution-review",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "review:build": "tsc -p review/tsconfig.json",
+    "review:render": "node review/render.mjs",
+    "test:review": "npm run review:build && node --test review/render.test.mjs"
+  },
+  "dependencies": {"react": "19.2.0", "react-dom": "19.2.0"},
+  "devDependencies": {"@types/react": "19.2.0", "@types/react-dom": "19.2.0", "typescript": "5.8.3"}
+}

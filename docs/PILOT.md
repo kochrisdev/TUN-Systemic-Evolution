@@ -4,7 +4,7 @@ Status: implemented experimental profile, with [named local validation](PILOT-VA
 
 ## Run
 
-Requires Python 3.11 or later; the recorded run used Python 3.13.4 on Windows. From the bundle root:
+Requires Python 3.11 or later; the recorded run used Python 3.13.4 on Windows. From the repository root:
 
 ```powershell
 python -m reference.tsev_pilot.demo
@@ -57,3 +57,9 @@ Fixture names are selected by the caller, not authenticated. The process and dat
 Threshold results mean only that synthetic aggregates satisfy the declared comparison. The count of 20 is not a statistical sufficiency calculation. Human development, data permissions, experiment assignment, causal inference, evaluator quality, source authenticity, production deployment, and complete TSEV conformance remain unassessed.
 
 The journal has no supported mutation/deletion API, retention service, database migration, or remote reconciliation. Direct database access can modify history. Repeated activation calls are rejected after the state changes; there is no distributed idempotency promise. A real integration needs the Engineering contracts for uncertain provider effects and recovery.
+
+## Continue with the family pilot
+
+The optional [connected demonstration](FAMILY-PILOT.md) adds actual Management and Engineering records and a Design report. Install its separate dependencies only when using that path. Its adapter recovers selected acknowledgement gaps; the standalone host described here retains its narrower behavior, including rejection of repeated activation calls.
+
+The standalone test-discovery command above runs the core suite. Run `python -m unittest discover -s tests/family -v` separately in the optional environment to test the family bridge.

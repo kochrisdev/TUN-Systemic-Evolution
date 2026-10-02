@@ -2,6 +2,8 @@
 
 **Learn deliberately. Change responsibly. Evolve together.**
 
+These commitments describe the intended practice. They are not claims that the current pilots demonstrate human learning or production readiness. Apply them through the [first learning cycle](FIRST-LEARNING-CYCLE.md) and assess them against the [draft requirements](SPECIFICATION-v0.1.md).
+
 ## 01 — Begin with human purpose
 
 Define the benefit with the people affected. Quality, agency, sustainable workload, and resilience matter alongside speed and cost. People retain the right to challenge the definition of improvement.

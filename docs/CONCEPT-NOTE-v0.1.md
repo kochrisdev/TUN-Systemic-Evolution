@@ -20,7 +20,7 @@ Evolution completes the TUN family by making learning reusable and accountable a
 | Model training | Learned model parameters | Training-data permissions, reproducible evaluation, model lineage, and a separate release process |
 | Organizational learning | Shared assumptions, policy, routines, roles | Evidence of changed practice and relevant outcomes, with responsible decisions |
 
-The first pilot implements none of the learning mechanisms themselves. It implements a narrow decision process over declared synthetic measurements and configuration versions. That boundary makes it possible to test record handling before claiming capability improvement.
+The pilots implement none of the learning mechanisms themselves. They exercise a narrow decision process over declared synthetic measurements and configuration versions. The family pilot also links a Management decision to a verified Engineering publication and a separate local activation. This tests record handling before claiming capability improvement.
 
 ## Distinctive contributions
 
@@ -48,10 +48,18 @@ Use short records for small, reversible changes. Combine signal, reflection, and
 
 The useful outputs are improved capability, corrected assumptions, rejected ineffective changes, and retired obsolete practices. More records, more experiments, or more autonomous behavior are not success measures by themselves.
 
+## What a reusable lesson contains
+
+Use a short, inspectable statement: **In this context, we observed this result using this method; it supports this conclusion within these limits; it changes this decision or practice; we will reconsider it under these conditions.** Link the supporting and contrary evidence rather than copying restricted source material into every record.
+
+A lesson may be proposed, assessed, superseded, or retired. Reuse requires an applicability check. Keeping a lesson available does not make it perpetually correct, and retrieving it does not authorize following it as an instruction.
+
 ## First slice and expansion
 
 Start with a support-drafting workflow that leaves publication with the human. Compare two pinned prompt configurations using fixed evaluation definitions, bounded evidence, an explicit decision, local activation, and a regression-triggered restoration. Include a human error-detection measure so faster output alone cannot pass.
 
-Next, use actual engineering evidence and a management decision with a presentation adapter. Then run a small real adoption with participant involvement and a delayed human learning assessment. Only after that should the project expand toward reusable skill libraries, training pipelines, cross-team lesson exchange, or automated experiment proposal.
+The first connected slice now uses actual pinned Management and Engineering code, with Design components for a read-only report. Its verified effect is publication of a local adoption manifest, not deployment of a model. The [family guide](FAMILY-PILOT.md) names the exact boundaries and remaining failure cases.
+
+Next, run one real learning cycle with participant involvement and, where human learning is claimed, an appropriate transfer or delayed assessment. Expand toward reusable practice libraries, training pipelines, cross-team lesson exchange, or automated experiment proposal only when the first adoption reveals a need.
 
 An AI may suggest changes and analyze permitted evidence. Permission to investigate, permission to experiment, permission to adopt, and permission to activate are separate. No improvement score grants any of them automatically.

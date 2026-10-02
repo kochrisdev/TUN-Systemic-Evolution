@@ -39,3 +39,13 @@ For a future field study, let reviewers articulate their reasons, receive feedba
 ## Connections across TUN
 
 Design presents the exact change, evidence, uncertainty, and controls. Engineering authorizes and verifies a real deployment and any recovery. Management owns the experiment resources and adoption decision. Evolution preserves the tested assumption, method, findings, applicability, and monitoring conditions.
+
+## The connected demonstration
+
+A separate [family pilot](../docs/FAMILY-PILOT.md) uses the supported synthetic candidate with actual pinned companion code. Management reviews imported observations and approves the exact mandate. Engineering separately authorizes and publishes a manifest of that decision and candidate.
+
+The simulated publication response is lost. While readback is unavailable, Evolution keeps the baseline active. After reopening the stores, Engineering reconciles the original operation and verifies one publication effect. The bridge then rechecks the case and permits local activation. Management has one USD 1.00 fixture reservation, not a measured expense.
+
+Design's actual components show the unresolved and verified publication snapshots. A separate section shows the local activation. This connected scenario does not run the standalone regression-and-rollback sequence; coordinated family recovery remains future work.
+
+The lesson from either executable scenario concerns record handling. A future team study must supply the real practice, observations, participant input, and outcome evidence.
