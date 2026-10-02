@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tun:systemic-evolution:pilot:0.1:experiment",
+  "title": "TUN Systemic Evolution experimental experiment envelope",
+  "description": "Only the embedded experiment spec. Cross-record identity, authority, dates, freshness, uniqueness, and transitions require host checks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "hypothesis", "baselineRef", "candidateRef", "population", "method", "windowStart", "windowEnd", "reviewBefore", "maxAgeSeconds", "minCases", "criteria", "limitations"],
+  "properties": {
+    "schemaVersion": {"const": "tsev-pilot/0.1"},
+    "hypothesis": {"$ref": "#/$defs/text"},
+    "baselineRef": {"$ref": "#/$defs/text"},
+    "candidateRef": {"$ref": "#/$defs/text"},
+    "population": {"$ref": "#/$defs/text"},
+    "method": {"$ref": "#/$defs/text"},
+    "windowStart": {"type": "string", "format": "date-time", "maxLength": 4000},
+    "windowEnd": {"type": "string", "format": "date-time", "maxLength": 4000},
+    "reviewBefore": {"type": "string", "format": "date-time", "maxLength": 4000},
+    "maxAgeSeconds": {"type": "integer", "minimum": 1},
+    "minCases": {"type": "integer", "minimum": 1},
+    "criteria": {
+      "type": "array", "minItems": 1, "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["metric", "unit", "direction", "minimumGain", "candidateLimit"],
+        "properties": {
+          "metric": {"$ref": "#/$defs/text"},
+          "unit": {"$ref": "#/$defs/text"},
+          "direction": {"enum": ["higher", "lower"]},
+          "minimumGain": {"type": "number", "minimum": 0},
+          "candidateLimit": {"type": "number"}
+        }
+      }
+    },
+    "limitations": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1, "maxLength": 4000, "pattern": "\\S"}}
+}
